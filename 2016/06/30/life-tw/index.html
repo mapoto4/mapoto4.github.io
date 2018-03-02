@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mapoto4:Life and Think">
+    <meta name="keyword"  content="麻婆, mapo, Mapoto4, mapoto4, Mapoto4 Blog, 戴劲, 数据结构, Android, 移动开发, Java, 算法, 博客">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          Nice to meet Taiwan - Mapoto4:Life and Think
+        
+    </title>
+
+    <link rel="canonical" href="http://mapoto4.com/2016/06/30/life-tw/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Mapoto4</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/note/">Favorite</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://mapoto4.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg1.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#随笔" title="随笔">随笔</a>
+                        
+                    </div>
+                    <h1>Nice to meet Taiwan</h1>
+                    <h2 class="subheading">安靜的人想很多,說話的人專心說。</h2>
+                    <span class="meta">
+                        Posted by mapoto4 on
+                        2016-06-30
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="这是我在台湾的第132天，第4个月多11天，第19周差一天。"><a href="#这是我在台湾的第132天，第4个月多11天，第19周差一天。" class="headerlink" title="这是我在台湾的第132天，第4个月多11天，第19周差一天。"></a>这是我在台湾的第132天，第4个月多11天，第19周差一天。</h1><p> 洗漱完毕，走进电梯想起醒来时手机屏幕上的信息，今天航班又取消了：)</p>
+<p> 楼下每天都在值夜班的保安大叔还是像往常一样的说了一声戴劲，我则回以一声招呼。整条大街亮着灯的只有麦当当和我习惯去吃夜宵的永和豆浆。走进电梯的那一刻习惯性按十一楼关门，镜子里的我嘴角残留着一片辣椒。收拾完毕，楼下的大巴车已经等着，帮着女生们把行李搬上车，总感觉女生的行李箱里装的是石头。</p>
+<p> 早晨的淡水非常非常非常的美丽，太阳从东边升起，云儿在阳光的照射下让我想到了小学课文中出现的瑰丽一词，玫瑰色的空中如此的美丽。车子在经过忠义站的时候，远远的能够看到台北101大楼在阳光的照耀下散发着金色的光芒。</p>
+<p> 这一刻我想到了很多很多，这一学期有太多的精彩太多的感动太多的幸运同样也有着太多的遗憾。</p>
+<h2 id="淡水"><a href="#淡水" class="headerlink" title="淡水"></a>淡水</h2><blockquote>
+<p>我還在淡水河的旁邊這裡的風景有些改變但我還是沿著河邊走才發現我們認識那麼久</p>
+</blockquote>
+<p>  红28到淡江大学，上车刷卡，谢谢。</p>
+<p>  因为周杰伦，认识了淡江中学，然后知道了淡江大学，这冥冥中有一些不能说的秘密，然而我是这个秘密的保护者，将这个秘密永远的埋藏在内心的最深处。</p>
+<p>  时间如白驹过隙，眨眼的时间一个学期就这样的结束了，在这里幸运的遇到了许多人许多事。 </p>
+<ul>
+<li><p>阿发老师，来到淡江的第一节课是阿发老师的Android课，也是我印象最深刻的老师。每节课老师总会很有激情的把内容讲完，然后让大家熟悉下程序，并对遇到的问题的处理。</p>
+<p>虽然有认真的听课，但我好害怕每次的小考，我坐在52号电脑，电脑每次都是花屏，于是我每次都会转移到62号，当然也有例外，期末考试的时候电脑被修好了。</p>
+<p>阿发老师大学念的淡江，硕士念的淡江，博士念的淡江，毕业后也一直在淡江，所以每次阿发老师都会以师兄的身份和同学聊天，比如哪个老师是原来教过他的，哪个老师的课堂要求很严格，哪个编译老师曾经让他们写过编译器。</p>
+<p>阿发老师总是穿着松松夸夸的卡通T恤，上课的时候是笑容满面，监考的时候也能够转换一脸严肃，总是能够调动起大家的兴趣，讲着他在做比赛评委时候的趣事，我想我会很怀念阿发的课。</p>
+</li>
+<li><p>钟兴台老师，第一次参与老师的JAVA课堂感到老师严谨的治学态度就被深深的吸引了，当告知老师是大陆来的学生时，老师很高兴的与我交谈，并且很直接的帮我完成了加签。课堂感到老师严谨的治学态度就被深深的吸引了，当告知老师是大陆来的学生时，老师很高兴的与我交谈，并且很直接的帮我完成了加签。</p>
+<p>老师总是能够用简单明了的演示让我很容易的就理解了代码，这或许是我上学期在大陆学习所缺少的知识，所以这学期加倍的练习代码以及熟练度，期末的时候能够较为轻松的完成考试。</p>
+<p>周四的最后一节课上老师总会讲诉一些他这些年遇到的问题和感悟，这些问题与感悟或许我遇到过，经历过，避开过，或许这些会给我人生增加些许见识些许色彩，但正是这些经历源源不断的支持着老师继续教书育人。</p>
+</li>
+<li><p>高明老师，第一节课上张荣贵老师介绍我们的助教是他公司的高级工程师，也是这学期负责给我们上课的老师，然后大谈这些年的经历，从高中到大学，从大学到工作，然而高明老师就坐在下面听着，偶尔的掌声显示着他的柔和。</p>
+<p>记得张老师介绍高明老师的时候说了一句话“聪明的脑袋不长草”，高明老师就是我一直说的地中海发型。</p>
+<p>每堂课老师总会不厌其烦的演示着程序的使用方法，一遍又一遍的帮同学解决各种各种的问题，或许是要求的比较轻松，很多课来的人总会比旷课的人少，不过老师还是有个习惯，上课迟到不给开门，后来老师不给开门都是同学帮忙开，这条规则也慢慢的有种被废弃的感觉。</p>
+</li>
+<li><p>蔡忆佳老师，Compiler真的很枯燥，一些正则表达式，文法规则，DFA和NFA之类的虽然老师讲的也很枯燥，但是我想应该没什么人能够讲的比蔡老师好的吧。</p>
+<p>记忆中有一次午后，蔡老师看睡觉的人那么多，然后讲了一个笑话，真的是讲笑话，虽然我没听出什么，班里也没有人配合老师，老师笑了半天，可能是我作为程序员还是不够格，没听出来笑点。</p>
+<p>蔡老师喝水总是大瓶装，蔡老师的字写得好像小学生，蔡老师的签到每节课都要，蔡老师真的从没有备课过，一支粉笔就能够讲完Compiler，我虽然会在课上打瞌睡，我虽然总会坐在前两排，但是老师从来没有叫醒我。  </p>
+</li>
+<li><p>小宇同学，第一次是在书法课见到的他，第二次是在艺术与人生的展览上，然后我们就这样认识了，每次和他的聊天都会感受到台湾浓浓的人情味。</p>
+<p>每次活动小宇同学都会给我发来邀请，惊聲诗社画扇，蒋国栋诗词讲座，科举制度讲座，这些看似只是普通的邀请，但是却让我感受到台湾人的热情，这些活动都是文学院的，小宇同学却是化学专业，这可能是身为非文学专业对艺术的追求。</p>
+<p>临回大陆前，小宇同学发的一路顺利，得知我因为航班取消邀请我去散步，这或许是我们最后一次见面，我真的很欢迎小宇同学来大陆玩。</p>
+</li>
+<li><p>樸毅志工，热血志工不是一句口号，而是一种态度。</p>
+<p>大学中经历过很多志愿经历，这些经历有时会让我感到迷茫，周末看小朋友写写作业，严重强调着装仪表，过分的争取一些功利和名利，这些真的是一个志愿者该去做的么？但是在参与到樸毅志工中感受到那每个人的热情的生活态度，这些真的让我感受到志愿者们所应该具有的态度。</p>
+<p>“我是华山基金会，阿姨，请问最近的身体状况怎么样”，第一次去探望困难家庭的时候，我因为听不懂台语，只能仰仗着刚霆学长，偶尔的国语让我了解阿姨的经历，真的让我超级震惊，阿姨的经历简直就是小说里的那些经历的翻版，但是对于阿姨的现在还是抱有同情心。</p>
+<p>或许我不够积极，我总是很少讲话，我总是呆在队伍的后面倾听着你们的谈话，我只是怕融入了之后舍不得大家，很感谢樸毅志工社让我从新认识了志愿者，望大家安好。</p>
+</li>
+<li><p>TKU CSIE About GUNS.</p>
+<p>一个认真，一个浮夸，一个老司机，一个擅长撩妹，一个真球迷，一个伪球迷。一学期的学习，他们两个教会我许多的东西，这些东西不只是在专业在生活。</p>
+<p>绕着操场一圈又一圈，时间过了一日又一日，我要忍着泪水得说，很高兴认识你们耶，我最亲爱亲爱的同学，我淡水河的旁边，这里的风景有些改变，但是我还是沿着河边走，才发现我们认识了那么久。</p>
+<p>来自江苏苏州在西安上学的周涛与来自福建莆田在东莞上学的许杰，这一段经历我会永远留在记忆中，</p>
+</li>
+<li><p>渔人码头，时间是码头，他收留我停留。</p>
+<p>每次在海边夜跑，在码头都会停留，静静的听着海风吹过，海浪拍打在岸上发出的清脆的声响。思绪总会飘逝到很远很远，有时会想起高中第一次看到海的那种心情。</p>
+<p>渔人码头有座情人桥，每次日落时分，桥上总会站满了等待看落日的人们，我有时也是其中之一，有时也会在桥下看着看夕阳的人们。临离开的几日，夕阳都会变得特别特别的美，我总会想着它是在挽留我。</p>
+</li>
+</ul>
+<h2 id="台北"><a href="#台北" class="headerlink" title="台北"></a>台北</h2><p> 忠孝东路，走了很多遍，忠孝新生，忠孝复兴，忠孝敦化，这或许是台湾最繁华的一条街，男人穿着庄重的服装，女人化着精致的妆容，穿梭在忠孝东路的大街小巷，有人走的匆忙，有人走的缓慢，有人流连于街旁的店铺，也有的人漫无目的。</p>
+<p> 一个人在和茗甘味处吃下午茶，一个人在马辣吃火锅，一个人在诚品书店看书，一个人在这里逛街，一个人在这里看电影，这里有过我的足迹，这里有过很多的美好回忆。</p>
+<p> 士林，台湾的夜市很有名，出名到了每个城市都会有一个夜市，士林也是如此。第一次到夜市时，拥挤的人群，路旁的商铺，這些都是如此的热闹，从头走到尾我已经彻底的被这热情的人儿所征服。</p>
+<p> 西门町，大安，古亭，很多很多站，每次从淡水到台北车站，都会经历19个站台，北投，士林，三分之一，三分之二，也是一种记录，一种对距离的分割。</p>
+<h2 id="海，跳着舞的那一片蓝原来是海，我喜欢看海，喜欢浅海的清澈，喜欢大海的深邃。"><a href="#海，跳着舞的那一片蓝原来是海，我喜欢看海，喜欢浅海的清澈，喜欢大海的深邃。" class="headerlink" title="海，跳着舞的那一片蓝原来是海，我喜欢看海，喜欢浅海的清澈，喜欢大海的深邃。"></a>海，跳着舞的那一片蓝原来是海，我喜欢看海，喜欢浅海的清澈，喜欢大海的深邃。</h2><p> 第一次看海是山东日照的海，小学的记忆还是很短暂，印象中捕捉寄居蟹很快乐，和满是蚊子的旅店。</p>
+<p> 第二次是江苏连云港，高二考试成绩很差，被妈妈打了一巴掌，然后自己赌气上学途中买了一张去最近有海的地方，这一次的海很失望很失望，浑浊的海水以及海面上漂浮的KFC全家桶的盒子。</p>
+<p> 第三次是云南的洱海，水很蓝很蓝，天空有大片大片的云朵，云儿映照在水里，距离天空是如此之近。</p>
+<p> 台湾的海很美丽，花莲，绿岛，兰屿，垦丁，这些地方留下足迹，留下记忆。</p>
+<p> 你来过垦丁吗？</p>
+<p> 垦丁的海像目前温柔的双臂，我从来没有看过比垦丁更干净的天空。</p>
+<p> 你说的没错，世界上没有任何一个地方比垦丁的海与天更美，虽然不会游泳但是完成了一直想要做的事情——跳下去。</p>
+<p> 这里是北纬22°38’22’’东经121°29’33’’西太平洋绿岛乡，潜水时氧气面罩在准备下潜时断开，喝了好多的海水，教练说我上辈子一定做过很多的善事烧了很多的香才会那么幸运。</p>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p> 我是否太过奢求，生命如此难测，我们来歌唱吧，我们来跳舞吧，我总是会忘记跟你说声谢谢，谢谢你陪伴我走一段路。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2044129-2f87b8f036e5b060.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/12/27/life-2016/" data-toggle="tooltip" data-placement="top" title="时间的秘密">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#随笔" title="随笔">随笔</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/mapoto4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/mapoto4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/mapoto4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/mapoto4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Mapoto4 2018 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://mapoto4.com">Mapoto4</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=mapoto4&repo=mapoto4.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://mapoto4.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'b658e20486f10974aafeb85d11d84cf1';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://mapoto4.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
