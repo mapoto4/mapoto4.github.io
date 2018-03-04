@@ -97,14 +97,14 @@
 
                         
                         <li>
-                            <a href="/favorite/">Favorite</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/favorite/">Favorite</a>
                         </li>
                         
                     
@@ -181,6 +181,33 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2018/03/04/web/">
+        <h2 class="post-title">
+            Hexo添加照片流分享
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言心中念念不忘许久的书籍音乐分享功能在近日通过查找资料完成了。
+这里做个记录，留下踩坑史。
+配置
+下载代码，将脚本放到主题目录下scripts目录，如果没有目录则新建目录git clone https://github.com/mapoto4/mapoto4.github.io.git
+
+通过指令新建页面目录
+1234567 myblog├── _config.yml├── package......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by mapoto4 on
+        2018-03-04
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -386,32 +413,6 @@ Return:12345[  [&q......
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2017/07/15/leetcode-5-longest-palindromic-substring/">
-        <h2 class="post-title">
-            LeetCode-Longest Palindromic Substring
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            题目Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
-解题思路
-回文分为单字符和双字符 
-单字符取一点为中心，定义两个变量左右同时扫描
-双字符采用中心点和中心点后一位为起点，定义两个变量从两个中点左右同时扫描 
-......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by mapoto4 on
-        2017-07-15
-    </p>
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -458,6 +459,8 @@ Return:12345[  [&q......
                         
                             
                             <a href="/tags/#随笔" title="随笔" rel="3">随笔</a>
+                            
+                        
                             
                         
                     </div>

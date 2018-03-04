@@ -13,11 +13,11 @@
 
     <title>
         
-          二分查找的实现 - Mapoto4:Life and Think
+          Hexo添加照片流分享 - Mapoto4:Life and Think
         
     </title>
 
-    <link rel="canonical" href="http://mapoto4.com/2018/02/28/algs-binarysearch/">
+    <link rel="canonical" href="http://mapoto4.com/2018/03/04/web/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,14 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#算法" title="算法">算法</a>
+                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                         
                     </div>
-                    <h1>二分查找的实现</h1>
+                    <h1>Hexo添加照片流分享</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by mapoto4 on
-                        2018-02-28
+                        2018-03-04
                     </span>
                 </div>
             </div>
@@ -191,8 +191,21 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h4 id="非递归方法"><a href="#非递归方法" class="headerlink" title="非递归方法"></a>非递归方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rank</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> hi = a.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt;= hi) &#123;    </span><br><span class="line">        <span class="keyword">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(key &lt; a[mid]) </span><br><span class="line">			hi = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; a[mid]) </span><br><span class="line">			lo = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rank</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span>[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(lo &gt; hi) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(key &lt; a[mid])</span><br><span class="line">			<span class="keyword">return</span> rank(key, a, lo, mid - <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(key &gt; a[mid])</span><br><span class="line">			<span class="keyword">return</span> rank(key, a, mid + <span class="number">1</span>, hi);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>心中念念不忘许久的书籍音乐分享功能在近日通过查找资料完成了。</p>
+<p>这里做个记录，留下踩坑史。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li><p>下载代码，将脚本放到主题目录下<code>scripts</code>目录，如果没有目录则新建目录<br><code>git clone https://github.com/mapoto4/mapoto4.github.io.git</code></p>
+</li>
+<li><p>通过指令新建页面目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> myblog</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── source</span><br><span class="line">│   └── favorite</span><br><span class="line">│       └── index.md</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>index.md使用插件定义模板生成页面。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% stream %&#125;</span><br><span class="line">&lt;!-- &#123;% figure  []() %&#125; --&gt;</span><br><span class="line">&#123;% figure https://img1.doubanio.com/lpic/s23115678.jpg [羊的门](https://book.douban.com/subject/1428004/) %&#125;</span><br><span class="line">&#123;% figure https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2511355624.webp [唐人街探案2](https://movie.douban.com/subject/26698897/) %&#125;</span><br><span class="line">&#123;% figure https://img3.doubanio.com/view/subject/m/public/s27061401.jpg [山丘](https://music.douban.com/subject/24847484/) %&#125;</span><br><span class="line">&#123;% endstream %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h3><p><img src="/img/post-favorite.jpg" alt="移动端"></p>
+
 
                 <hr>
 
@@ -200,13 +213,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/03/04/web/" data-toggle="tooltip" data-placement="top" title="Hexo添加照片流分享">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2018/01/02/leetcode-17-letter-combinations-of-a-phone-number/" data-toggle="tooltip" data-placement="top" title="LeetCode-Letter Combinations of a Phone Number">Next Post &rarr;</a>
+                            <a href="/2018/02/28/algs-binarysearch/" data-toggle="tooltip" data-placement="top" title="二分查找的实现">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -233,7 +242,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#算法" title="算法">算法</a>
+                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                         
                     </div>
                 </section>

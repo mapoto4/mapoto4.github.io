@@ -1,25 +1,20 @@
-### Mapoto4
+## Mapoto4
 
 [Demo](http://mapoto4.com)
 
 
 ![Web端](/img/Readme_1.png)
 
-### Install
+## Install
+`
+$git clone git@github.com:mapoto4/mapoto4.github.io.git
+`
 
-`$git clone https://github.com/mapoto4/mapoto4.github.io.git`
+## Features
 
-### write
-``` 
----
-title: Your post name
-date: 2012-12-31 00:00:00
-header-img: "/img/img.jpg"
-tags:
-	- tag
----
-```
+#### New Feature(V1.1)
+  - Add Favorite page ,support movies & books show.
 
-### Thanks
+## Thanks
 
 Hux
