@@ -13,11 +13,11 @@
 
     <title>
         
-          Android生命周期 - Mapoto4:Life and Think
+          android-JPush - Mapoto4:Life and Think
         
     </title>
 
-    <link rel="canonical" href="http://mapoto4.com/2019/04/17/android-life/">
+    <link rel="canonical" href="http://mapoto4.com/2019/06/14/android-DPush/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,14 +165,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
                     </div>
-                    <h1>Android生命周期</h1>
+                    <h1>android-JPush</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by mapoto4 on
-                        2019-04-17
+                        2019-06-14
                     </span>
                 </div>
             </div>
@@ -191,18 +189,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="典型情况下的生命周期"><a href="#典型情况下的生命周期" class="headerlink" title="典型情况下的生命周期"></a>典型情况下的生命周期</h2><p>有用户参与的情况下，Android所经过的生命周期的改变。</p>
-<h4 id="onCreate-Bundle"><a href="#onCreate-Bundle" class="headerlink" title="onCreate(Bundle)"></a>onCreate(Bundle)</h4><p>通过覆盖onCrete(Bundle),activity可以预处理以下UI工作：</p>
-<ul>
-<li>实例化组件并将它们放置在屏幕上(调用setContentView (int) 方法)</li>
-<li>引用已实例化的组件</li>
-<li>为组件设置监听器以处理用户交互</li>
-<li>访问外部模型数据<br>注： 禁止自己调用onCreate(Bundle)方法或者任何其他activity生命周期方法。为通知activity状态变化，只需要在子类里覆盖这些方法，Android根据用户状态以及系统运行情况自动调用。</li>
-</ul>
-<h2 id="异常情况下的生命周期"><a href="#异常情况下的生命周期" class="headerlink" title="异常情况下的生命周期"></a>异常情况下的生命周期</h2><p>Android被系统回收或者由于当前设备Configuration发生改变从而导致Activity被销毁重建。</p>
-<h4 id="旋转屏幕"><a href="#旋转屏幕" class="headerlink" title="旋转屏幕"></a>旋转屏幕</h4><p>覆盖onSaveInstanceState(Bundle)方法并不仅仅用于处理与设备旋转相关的问题。<br>覆盖onSaveInstanceState(Bundle)方法，在Bundle对象中，保存当前activity的小的或暂存状态的数据；<br>覆盖onStop()方法，保存永久性数据，如用户编辑的文字等。</p>
-<h2 id="Android生命周期测试"><a href="#Android生命周期测试" class="headerlink" title="Android生命周期测试"></a>Android生命周期测试</h2><p>启动App<br>Oncreate -&gt; onStart -&gt; onResume<br>熄灭屏幕/返回主界面<br>onPause -&gt; onSaveInstance -&gt; onStop<br>唤醒屏幕<br>onRestart -&gt; onStart -&gt; onResume<br>退出<br>onPause -&gt; onStop -&gt; onDestroy<br>旋转屏幕<br>onPause -&gt; onSaveInstance -&gt; onStop -&gt; onDestroy -&gt; onCreate -&gt; onStart -&gt; onResume<br>A 切换 B<br>onCreate_A -&gt; onStart_A -&gt; onResume_A -&gt; onPause_A -&gt; onCreate_B -&gt; onStart_B -&gt; onResume_B -&gt; onStop_A</p>
-
+                
 
                 <hr>
 
@@ -210,13 +197,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/06/14/android-DPush/" data-toggle="tooltip" data-placement="top" title="android-JPush">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2019/03/25/life-2018/" data-toggle="tooltip" data-placement="top" title="巴适的假象">Next Post &rarr;</a>
+                            <a href="/2019/04/17/android-life/" data-toggle="tooltip" data-placement="top" title="Android生命周期">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -243,8 +226,6 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
-                        
                     </div>
                 </section>
                 
